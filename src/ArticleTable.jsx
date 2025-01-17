@@ -2,13 +2,13 @@
 import ArticleRow from "./ArticleRow";
 import articles from '../_data/your-articles.json'; // path to JSON file
 
-import "./css/ArticleTable.css"
+import "./css/ArticleTableBlack.css"
 
 function ArticleTable() {
   return (
     <>
       <h2> Your Articles </h2>
-      <table>
+      <table className="tableBlack">
         <thead>
           <tr>
             <th>Title</th>

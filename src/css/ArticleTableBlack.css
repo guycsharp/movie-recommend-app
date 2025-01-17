@@ -1,4 +1,5 @@
-table {
+/* Black-themed table styles */
+.tableBlack {
   width: 100%;
   border-collapse: collapse;
   margin: 20px 0;
@@ -7,38 +8,38 @@ table {
   color: #333; /* Dark font color */
 }
 
-thead tr {
+.tableBlack thead tr {
   background-color: #333;
   color: #ffffff;
   text-align: left;
 }
 
-thead th, tbody td {
+.tableBlack thead th, .tableBlack tbody td {
   padding: 12px 15px;
 }
 
-tbody tr:nth-of-type(even) {
+.tableBlack tbody tr:nth-of-type(even) {
   background-color: #f3f3f3;
 }
 
-tbody tr:nth-of-type(odd) {
+.tableBlack tbody tr:nth-of-type(odd) {
   background-color: #fff;
 }
 
-tbody tr:hover {
+.tableBlack tbody tr:hover {
   background-color: #f1f1f1;
 }
 
-a {
+.tableBlack a {
   color: #1d70b8;
   text-decoration: none;
 }
 
-a:hover {
+.tableBlack a:hover {
   text-decoration: underline;
 }
 
-img {
+.tableBlack img {
   max-width: 100px;
   height: auto;
   border-radius: 8px;
