@@ -1,13 +1,13 @@
 // import React from 'react';
 import ArticleRow from "./ArticleRow";
-import articles from '../_data/your-articles.json'; // path to JSON file
+import articles from '../_data/missed-articles.json'; // path to JSON file
 
 import "./css/ArticleTable.css"
 
-function ArticleTable() {
+function MissedArticleTable() {
   return (
     <>
-      <h2> Your Articles </h2>
+      <h2> Missed Articles </h2>
       <table>
         <thead>
           <tr>
@@ -33,4 +33,4 @@ function ArticleTable() {
   );
 }
 
-export default ArticleTable;
+export default MissedArticleTable;
