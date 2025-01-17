@@ -1,14 +1,28 @@
 // import React from 'react';
 import ArticleRow from "./ArticleRow";
-import articles from '../_data/your-articles.json'; // path to JSON file
+import yourArticles from '../_data/your-articles.json'; // path to JSON file
+import missedArticles from '../_data/missed-articles.json'; // path to JSON file
 
 import "./css/ArticleTableBlack.css"
+import "./css/MissedArticleTableRed.css"
 
-function ArticleTable() {
+const chooseArticles = (tableClass) => {
+  switch (tableClass) {
+    case 'tableBlack':
+      return yourArticles;
+    case 'tableRed':
+      return missedArticles;
+  }
+}
+
+function ArticleTable(props) {
+  const { tableClass, heading } = props;
+  const articles = chooseArticles(tableClass);
   return (
     <>
-      <h2> Your Articles </h2>
-      <table className="tableBlack">
+      <h2> {heading} </h2>
+      {/* <table className="tableBlack"> */}
+      <table className={tableClass}>
         <thead>
           <tr>
             <th>Title</th>

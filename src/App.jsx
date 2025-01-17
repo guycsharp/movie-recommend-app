@@ -9,8 +9,9 @@ function App() {
 
   return (
     <>
-      <ArticleTable/>
-      <MissedArticleTable/>
+      <ArticleTable tableClass="tableBlack" heading="Your Articles"/>
+      <ArticleTable tableClass="tableRed" heading="Missed Articles"/>
+      {/* <MissedArticleTable/> */}
     </>
   )
 }
