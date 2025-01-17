@@ -1,4 +1,5 @@
 // import React from 'react';
+import PropTypes from "prop-types";
 import ArticleRow from "./ArticleRow";
 import yourArticles from '../_data/your-articles.json'; // path to JSON file
 import missedArticles from '../_data/missed-articles.json'; // path to JSON file
@@ -31,6 +32,7 @@ function ArticleTable(props) {
             <th>Link</th>
             <th>Author Name</th>
             <th>Author Image</th>
+            <th>Author Is Medium Member?</th>
             <th>Posted Date</th>
             <th>Minutes to Read</th>
             <th>Has Audio Available</th>
@@ -45,6 +47,11 @@ function ArticleTable(props) {
       </table>
     </>
   );
+}
+
+ArticleTable.propTypes = {
+  tableClass: PropTypes.string.isRequired,
+  heading: PropTypes.string
 }
 
 export default ArticleTable;

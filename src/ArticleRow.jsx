@@ -1,4 +1,5 @@
 // import React from 'react';
+import PropTypes from "prop-types";
 
 function ArticleRow(props) {
   const {
@@ -6,15 +7,14 @@ function ArticleRow(props) {
     description,
     image,
     link,
-    authorName,
-    authorImage,
     postedDate,
     minutesToRead,
     hasAudioAvailable,
     memberPreview,
     altImage,
-    altAuthorImage
+    altAuthorImage,
   } = props;
+  const { author} = props;
 
   return (
     <tr>
@@ -22,14 +22,30 @@ function ArticleRow(props) {
       <td>{description}</td>
       <td><img src={image} alt={altImage} /></td>
       <td><a href={link}>Read Article</a></td>
-      <td>{authorName}</td>
-      <td><img src={authorImage} alt={altAuthorImage} /></td>
+      <td>{author.name}</td>
+      <td><img src={author.image} alt={altAuthorImage} /></td>
+      <td>{author.isMediumMember.toString()}</td>
       <td>{postedDate}</td>
       <td>{minutesToRead}</td>
-      <td>{hasAudioAvailable}</td>
-      <td>{memberPreview}</td>
+      <td>{hasAudioAvailable.toString()}</td>
+      <td>{memberPreview.toString()}</td>
     </tr>
   );
 }
+
+ArticleRow.propTypes =
+{
+  title: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired,
+  image: PropTypes.string.isRequired,
+  link: PropTypes.string.isRequired,
+  author: PropTypes.object.isRequired,
+  postedDate: PropTypes.string.isRequired,
+  minutesToRead: PropTypes.number.isRequired,
+  hasAudioAvailable: PropTypes.bool.isRequired,
+  memberPreview: PropTypes.bool.isRequired,
+  altImage: PropTypes.string,
+  altAuthorImage: PropTypes.string
+};
 
 export default ArticleRow;
