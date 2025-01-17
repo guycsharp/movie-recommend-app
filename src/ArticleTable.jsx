@@ -39,11 +39,19 @@ function ArticleTable(props) {
             <th>Member Preview</th>
           </tr>
         </thead>
+
         <tbody>
+            {/*
+              Loop through each item in the 'articles' array.
+              For each 'article', create an 'ArticleRow' component.
+              The 'key' prop is a unique identifier for each row, which helps React manage list items efficiently.
+              The '{...article}' syntax spreads the properties of 'article' object into the 'ArticleRow' component as props.
+            */}
           {articles.map((article, index) => (
             <ArticleRow key={index} {...article} />
           ))}
         </tbody>
+
       </table>
     </>
   );

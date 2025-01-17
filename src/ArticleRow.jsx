@@ -10,20 +10,18 @@ function ArticleRow(props) {
     postedDate,
     minutesToRead,
     hasAudioAvailable,
-    memberPreview,
-    altImage,
-    altAuthorImage,
+    memberPreview
   } = props;
-  const { author} = props;
+  const { author } = props;
 
   return (
     <tr>
       <td>{title}</td>
       <td>{description}</td>
-      <td><img src={image} alt={altImage} /></td>
+      <td><img src={image} alt={image} /></td>
       <td><a href={link}>Read Article</a></td>
       <td>{author.name}</td>
-      <td><img src={author.image} alt={altAuthorImage} /></td>
+      <td><img src={author.image} alt={author.name} /></td>
       <td>{author.isMediumMember.toString()}</td>
       <td>{postedDate}</td>
       <td>{minutesToRead}</td>
@@ -43,9 +41,7 @@ ArticleRow.propTypes =
   postedDate: PropTypes.string.isRequired,
   minutesToRead: PropTypes.number.isRequired,
   hasAudioAvailable: PropTypes.bool.isRequired,
-  memberPreview: PropTypes.bool.isRequired,
-  altImage: PropTypes.string,
-  altAuthorImage: PropTypes.string
+  memberPreview: PropTypes.bool.isRequired
 };
 
 export default ArticleRow;
