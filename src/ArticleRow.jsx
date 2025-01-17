@@ -23,7 +23,7 @@ function ArticleRow(props) {
       <td>{author.name}</td>
       <td><img src={author.image} alt={author.name} /></td>
       <td>{author.isMediumMember.toString()}</td>
-      <td>{postedDate}</td>
+      <td>{postedDate.substring(0,10)}</td>
       <td>{minutesToRead}</td>
       <td>{hasAudioAvailable.toString()}</td>
       <td>{memberPreview.toString()}</td>
