@@ -1,19 +1,19 @@
 import { useState } from 'react'
 
-import ArticleTable from './ArticleTable';
+
+import QuizContainer from './components/Quiz/QuizContainer';
+
 import './App.css'
-import MissedArticleTable from './MissedArticleTable';
+
 
 
 function App() {
 
   return (
     <>
-      <ArticleTable tableClass="tableBlack" heading="Your Articles"/>
-      <ArticleTable tableClass="tableRed" heading="Missed Articles"/>
-      {/* <MissedArticleTable/> */}
+      <QuizContainer />
     </>
-  )
+  );
 }
 
 export default App
