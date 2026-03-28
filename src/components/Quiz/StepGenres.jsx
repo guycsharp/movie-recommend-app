@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { fetchGenres } from "../../api/tmdb";
+import "../../css/Quiz.css";
 
 export default function StepGenres({ selectedGenres, setSelectedGenres, next }) {
   const [genres, setGenres] = useState([]);
@@ -10,7 +11,9 @@ export default function StepGenres({ selectedGenres, setSelectedGenres, next }) 
 
   const toggleGenre = (id) => {
     setSelectedGenres(prev =>
-      prev.includes(id) ? prev.filter(g => g !== id) : [...prev, id]
+      prev.includes(id)
+        ? prev.filter(g => g !== id)
+        : [...prev, id]
     );
   };
 
@@ -18,19 +21,23 @@ export default function StepGenres({ selectedGenres, setSelectedGenres, next }) 
     <div>
       <h2>Select a few genres you like</h2>
 
-      <div className="grid">
+      <div className="movie-grid">
         {genres?.map(g => (
-          <button
+          <div
             key={g.id}
-            className={selectedGenres.includes(g.id) ? "selected" : ""}
+            className={`movie-card ${selectedGenres.includes(g.id) ? "selected" : ""}`}
             onClick={() => toggleGenre(g.id)}
           >
-            {g.name}
-          </button>
+            <p>{g.name}</p>
+          </div>
         ))}
       </div>
 
-      <button disabled={selectedGenres.length < 2} onClick={next}>
+      <button
+        disabled={selectedGenres.length < 2}
+        onClick={next}
+        className="next-btn"
+      >
         Continue
       </button>
     </div>
